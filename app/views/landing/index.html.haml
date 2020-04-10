@@ -1,4 +1,17 @@
 #vue-app
 	.container-fluid{style: "padding-top: 15px;"}
 		%h2 Card Templates
-		%templates-list
+		.row
+			.container-fluid
+				%templates-list
+		.row
+			.col-sm-12.col-md-8
+				.row.ml-1
+					%h2 Preview
+				.row.ml-1
+					%preview-container
+			.col-sm-12.col-md-4
+				.row.ml-3
+					%h2 Your details
+				.row.ml-3
+					%inputs

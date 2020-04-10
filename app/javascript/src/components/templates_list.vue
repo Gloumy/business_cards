@@ -3,9 +3,9 @@
     <ul class="list-group list-group-horizontal">
       <li
         v-for="template in templates"
-        v-on:click="selectTemplate(template.id)"
+        @click="selectTemplate(template.id)"
         class="list-group-item flex-fill"
-        :class="{selected: selectedId == template.id}"
+        :class="{selected: selectedTemplate == template.id}"
         :key="template.id"
       >{{template.label}}</li>
     </ul>
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from "vuex";
+
 export default {
   data() {
     return {
@@ -20,15 +22,24 @@ export default {
         { id: 1, label: "Template 1" },
         { id: 2, label: "Template 2" },
         { id: 3, label: "Template 3" }
-      ],
-      selectedId: 1
+      ]
     };
   },
   methods: {
-    selectTemplate(id) {
-      this.selectedId = id;
-    }
+    ...mapMutations(["selectTemplate"])
+    // selectTemplate(id) {
+    //   this.selectedId = id;
+    // }
+  },
+  computed: {
+    ...mapGetters(["selectedTemplate"])
+    // selectedTemplateId(){
+    //   return this.$store.state.selectedTemplateId;  
+    // }
   }
+  // computed: mapState([
+  //   'selectedTemplateId'
+  // ])
 };
 </script>
 

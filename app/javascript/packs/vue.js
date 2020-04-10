@@ -2,7 +2,7 @@
 
 import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue/dist/vue.esm'
-import App from '../app.vue'
+import Inputs from '../src/components/inputs.vue'
 
 Vue.use(TurbolinksAdapter)
 
@@ -14,6 +14,6 @@ document.addEventListener('turbolinks:load', () => {
     //     message: "Can you say hello?"
     //   }
     // },
-    components: { App }
+    components: { Inputs }
   })
 })

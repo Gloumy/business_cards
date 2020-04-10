@@ -6,6 +6,7 @@ import Inputs from '../src/components/inputs.vue'
 import TemplatesList from '../src/components/templates_list.vue'
 import PreviewContainer from '../src/components/preview_container.vue'
 import Vuex from 'vuex'
+import store from '../src/stores/index'
 
 Vue.use(Vuex)
 Vue.use(TurbolinksAdapter)

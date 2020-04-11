@@ -1,19 +1,26 @@
 
 const state = {
     selectedTemplateId: 2,
-    userDetails: {}
+    userDetails: {
+        firstname: "John",
+        lastname: "Doe",
+        backgroundColor: "#0099cc",
+    }
 };
 const getters = {
     selectedTemplate(state) {
         return state.selectedTemplateId;
+    },
+    userDetails(state) {
+        return state.userDetails;
     }
 };
 const mutations = {
     selectTemplate(state, templateId) {
         state.selectedTemplateId = templateId;
     },
-    updateUserDetails(userDetails) {
-        state.userDetails = userDetails;
+    updateUserDetails(state, updatedInfo) {
+        state.userDetails[updatedInfo.attribute] = updatedInfo.value;
     },
 };
 

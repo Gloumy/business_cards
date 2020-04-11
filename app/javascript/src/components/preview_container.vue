@@ -1,21 +1,25 @@
 <template>
-    <div class="preview-container">
-
-    </div>
+  <div class="preview-container" :style="{backgroundColor: userDetails.backgroundColor}">
+    <h1>Template {{selectedTemplate}}</h1>
+    {{userDetails.firstname}} {{userDetails.lastname}}
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters(["userDetails", "selectedTemplate"])
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 .preview-container {
-    border-style: solid;
-    border-color: black;
-    min-width: 100%;
-    min-height: 350px;
-    border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  min-width: 100%;
+  min-height: 350px;
+  border-width: 1px;
 }
 </style>
